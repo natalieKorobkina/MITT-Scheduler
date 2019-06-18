@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "UpdateHolidays";
 }
-<h2>Update Holidays</h2>
+
 <div class="main-panel">
     <div class="panel panel-success">
-        <div class="panel-heading">Update Holidays</div>
+        <div class="panel-heading" style="text-align:center"><h2>Update Holidays</h2></div>
         <div class="panel-body">
             <form method="post" action="@Url.Action(nameof(HomeController.Index), "Home")">
                 @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -40,8 +40,8 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success">Save</button>
-                <a href="@Url.Action(nameof(HomeController.Index),"Home")" class="btn btn-danger">Cancel</a>
+                <hr />
+                <input type="submit" value="Add Holiday" class="btn btn-default" />
             </form>
         </div>
     </div>

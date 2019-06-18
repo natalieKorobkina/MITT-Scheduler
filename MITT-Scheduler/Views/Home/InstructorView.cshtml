@@ -583,7 +583,6 @@ $(document).ready(function() {
 
 
     body {
-        margin-top: 40px;
         text-align: center;
         font-size: 14px;
         font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
@@ -637,19 +636,18 @@ $(document).ready(function() {
         box-shadow: 0 1px 2px #C3C3C3;
     }
 </style>
-
-<body>
-
-    @{
-        ViewBag.Title = "InstructorView";
-    }
-
-    <h2>Welcome, John</h2>
-<br />
-    <div id='wrap'>
-        <div id='calendar'></div>
-        <div style='clear:both'></div>
-    </div>
-
-</body>
-
+<div class="main-panel">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h2>
+                Welcome, John
+            </h2>
+        </div>
+        
+        <br />
+        <div id='wrap'>
+            <div id='calendar'></div>
+            <div style='clear:both'></div>
+        </div>
+        </div>
+</div>
