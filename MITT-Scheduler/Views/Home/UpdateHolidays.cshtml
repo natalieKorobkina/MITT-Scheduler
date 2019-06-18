@@ -1,0 +1,51 @@
+﻿@model UpdateHolidaysViewModel
+@{
+    ViewBag.Title = "UpdateHolidays";
+}
+<h2>Update Holidays</h2>
+<div class="main-panel">
+    <div class="panel panel-success">
+        <div class="panel-heading">Update Holidays</div>
+        <div class="panel-body">
+            <form method="post" action="@Url.Action(nameof(HomeController.Index), "Home")">
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-2" })
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Description, new { @class = "control-label col-md-2" })
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control", placeholder = "Description" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Date, new { @class = "control-label col-md-2" })
+                            <div class="form-group">
+                                <div class='input-group date' id='startdatepicker'>
+                                    <span class="input-group-addon calender">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                    @Html.TextBoxFor(m => m.Date, new { @class = "form-control ", placeholder = "Date" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Save</button>
+                <a href="@Url.Action(nameof(HomeController.Index),"Home")" class="btn btn-danger">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MITT Scheduler</title>
+    <script src="~/js/jquery-2.1.1.min.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    @*<link href="~/css/fullcalendar.print.css" rel="stylesheet" />*@
+    <link href="~/css/fullcalendar.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-container">
+        <div class="left-content">
+            <div class="mother-grid-inner">
+                <!--header start here-->
+                <div class="header-main">
+                    <div class="header-left" style="width:77%">
+                        <div class="logo-name">
+                            <img id="logo" src="~/images/mitt-logo.png" alt="Logo" />
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="header-right">
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <!--heder end here-->
+                <!--inner block start here-->
+                <div class="inner-block">
+                    @RenderBody()
+                </div>
+                <!--inner block end here-->
+                <!--copy rights start here-->
+                <div class="copyrights">
+                    <p>© 2019   </p>
+                </div>
+                <!--COPY rights end here-->
+            </div>
+        </div>
+        <!--slider menu-->
+        <div class="sidebar-menu">
+            <div class="logo">
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#">
+                    <span id="logo"></span>
+                    <!--<img id="logo" src="" alt="Logo"/>-->
+                </a>
+            </div>
+            <div class="menu">
+
+                <ul id="menu">
+                    <li id="menu-home">
+                        <a href="@Url.Action("AllCourses", "Home")">
+                            <i class="fa fa-home"></i><span> Your Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("CreateCourse", "Home")">
+                            <i class="fa fa-book"></i><span>Create Course</span>
+                        </a>
+                    </li>
+                    <li id="menu-comunicacao">
+                        <a href="@Url.Action("UpdateHolidays", "Home")">
+                            <i class="fa fa-cogs"></i><span>Update Holidays</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("StudentView", "Home")">
+                            <i class="fa fa-cog"></i><span>Student View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("InstructorView", "Home")">
+                            <i class="fa fa-cog"></i><span>Instructor View</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("RoomView", "Home")">
+                            <i class="fa fa-cog"></i><span>Room View</span>
+                        </a>
+                    </li>
+                    <li>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a class="nav-link dropdown-toggle" href="javascript:document.getElementById('logoutForm').submit()">
+                                <i class="fa fa-sign-out"></i><span>Log Off</span>
+                            </a>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); },
+        false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--skycons-icons-->
+    <script src="~/js/skycons.js"></script>
+    <!--//skycons-icons-->
+    <script>
+        var toggle = true;
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
+            toggle = !toggle;
+        });
+    </script>
+
+    <script src="~/js/jquery.nicescroll.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/jquery-ui.custom.min.js"></script>
+    <script src="~/js/fullcalendar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        $('#datetimepicker1').datetimepicker({
+            useCurrent: true,
+            format: 'DD/MM/YYYY',
+            showTodayButton: true,
+            showClear: true,
+            showClose: true,
+            //autoclose: true,
+            maxDate: new Date(),
+            toolbarPlacement: 'top'
+        });
+    </script>
+    <script src="~/js/Site.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
