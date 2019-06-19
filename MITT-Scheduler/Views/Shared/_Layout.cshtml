@@ -104,15 +104,7 @@
                             <i class="fa fa-print"></i><span>Print</span>
                         </a>
                     </li>
-                    <li>
-                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <a class="nav-link dropdown-toggle" href="javascript:document.getElementById('logoutForm').submit()">
-                                <i class="fa fa-sign-out-alt"></i><span>Log Off</span>
-                            </a>
-                        }
-                    </li>
+                  
                 </ul>
             </div>
         </div>
