@@ -19,6 +19,11 @@ namespace MITT_Scheduler.Controllers
             return View();
         }
 
+        public ActionResult CreateProgram()
+        {
+            return View();
+        }
+
         public ActionResult CreateCourse()
         {
 
@@ -44,6 +49,12 @@ namespace MITT_Scheduler.Controllers
         }
 
         public ActionResult RoomView()
+        {
+
+            return View();
+        }
+
+        public ActionResult Print()
         {
 
             return View();
