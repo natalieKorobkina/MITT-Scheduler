@@ -5,21 +5,50 @@
 
 <div class="main-panel">
     <div class="panel panel-success">
-        <div class="panel-heading" style="text-align:center"><h2>Create Program</h2></div>
+        <div class="panel-heading" style="text-align:center"><h2>Create New Program</h2></div>
         <div class="panel-body">
-            <form method="post" action="@Url.Action(nameof(HomeController.Index), "Home")">
+            @using (Html.BeginForm("CreateCourse", "Home", FormMethod.Post))
+            {
                 @Html.ValidationSummary("", new { @class = "text-danger" })
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-2" })
-                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
-                        </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.Name)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CREDENTIAL, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.CREDENTIAL)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DURATION, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.DURATION)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Courses, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.Courses)
+                </div>
+                <div class="form-group">
+                    <label for="date-picker-input" class="control-label col-md-2">Start Date</label>
+                    <div class='input-group date' id='startdatepicker'>
+                        <span class="input-group-addon calender">
+                            <span class="fas fa-calendar-alt"></span>
+                        </span>
+                        @Html.TextBoxFor(m => m.StartDate, new { Id = "populated-date" })
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="date-picker-input" class="control-label col-md-2">End Date</label>
+                    <div class='input-group date' id='enddatepicker'>
+                        <span class="input-group-addon calender">
+                            <span class="fas fa-calendar-alt"></span>
+                        </span>
+                        @Html.TextBoxFor(m => m.EndDate, new { Id = "populated-date" })
+                    </div>
+                </div>
+
                 <hr />
                 <input type="submit" value="Create Program" class="btn btn-default" />
-            </form>
+            }
         </div>
     </div>
 </div>

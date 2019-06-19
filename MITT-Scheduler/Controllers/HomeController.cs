@@ -13,7 +13,11 @@ namespace MITT_Scheduler.Controllers
             return View();
         }
 
-        
+        public ActionResult AllPrograms()
+        {
+            return View();
+        }
+
         public ActionResult AllCourses()
         {
             return View();
