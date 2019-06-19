@@ -16,7 +16,7 @@ namespace MITT_Scheduler
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "AllCourses", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "StudentView", id = UrlParameter.Optional }
             );
         }
     }
