@@ -6,10 +6,10 @@
 <div class="main-panel">
     <div class="panel panel-success">
         <div class="panel-heading" style="text-align:center">
-        <h2>
-            Create New Course
-        </h2>
-    </div>
+            <h2>
+                Create New Course
+            </h2>
+        </div>
         <div class="panel-body">
             @using (Html.BeginForm("CreateCourse", "Home", FormMethod.Post))
             {
@@ -31,7 +31,7 @@
                     <label for="date-picker-input" class="control-label col-md-2">Start Date</label>
                     <div class='input-group date' id='startdatepicker'>
                         <span class="input-group-addon calender" style="border-right:1 !important">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="fas fa-calendar-alt"></span>
                         </span>
                         @Html.TextBoxFor(m => m.StartDate, new { Id = "populated-date" })
                     </div>
@@ -40,7 +40,7 @@
                     <label for="date-picker-input" class="control-label col-md-2">End Date</label>
                     <div class='input-group date' id='enddatepicker'>
                         <span class="input-group-addon calender">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="fas fa-calendar-alt"></span>
                         </span>
                         @Html.TextBoxFor(m => m.EndDate, new { Id = "populated-date" })
                     </div>
@@ -48,7 +48,7 @@
                     <label for="date-picker-input" class="control-label col-md-2">Start Time</label>
                     <div class='input-group date' id='starttimepicker'>
                         <span class="input-group-addon calender">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="fas fa-clock"></span>
                         </span>
                         @Html.TextBoxFor(m => m.StartTime, new { Id = "populated-date" })
                     </div>
@@ -56,7 +56,7 @@
                     <label for="date-picker-input" class="control-label col-md-2">End Time</label>
                     <div class='input-group date' id='endtimepicker'>
                         <span class="input-group-addon calender">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="fas fa-clock"></span>
                         </span>
                         @Html.TextBoxFor(m => m.EndTime, new { Id = "populated-date" })
                     </div>
