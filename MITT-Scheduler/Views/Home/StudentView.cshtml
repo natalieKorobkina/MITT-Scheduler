@@ -1,4 +1,4 @@
-﻿
+﻿@model  CreateCourseBindingModel
 @{
     ViewBag.Title = "Student View";
     ViewBag.JohnRoom = ",902";
@@ -769,9 +769,13 @@
 <div class="main-panel">
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h2>
-                Student/Program View
+            
+            <h2 style="display:inline">
+                Program 
             </h2>
+            <h3 style="display:inline">
+                @Html.DropDownListFor(x => Model.ProgramId, new SelectList(Model.Programs, "Value", "Text"))
+            </h3>
         </div>
 
         <br />
