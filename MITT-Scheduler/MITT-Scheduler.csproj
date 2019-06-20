@@ -363,6 +363,7 @@
     <Content Include="Views\Home\CreateProgram.cshtml" />
     <Content Include="Views\Home\AllPrograms.cshtml" />
     <Content Include="Views\Home\StudentView.cshtml" />
+    <Content Include="Views\Home\RoomReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

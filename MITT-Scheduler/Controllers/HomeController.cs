@@ -63,6 +63,11 @@ namespace MITT_Scheduler.Controllers
             return View(model);
         }
 
+        public ActionResult RoomReport()
+        {
+            return View();
+        }
+
         public ActionResult CreateProgram()
         {
             return View();
