@@ -236,7 +236,6 @@ a:hover {
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius:3px;
-    -o-border-radius:3px;
     color: #FFF;
     background-clip: padding-box;
     background:#68AE00;
@@ -2578,7 +2577,12 @@ a.popup-with-zoom-anim {
     font-family: 'Carrois Gothic', sans-serif;
 }
 
-#small-dialog,#small-dialog1,#small-dialog2,#small-dialog3,#small-dialog4,#small-dialog5{
+#small-dialog,
+#small-dialog1,
+#small-dialog2,
+#small-dialog3,
+#small-dialog4,
+#small-dialog5{
 	background: white;
     padding: 10px 0 10px 0;
 	text-align: left;

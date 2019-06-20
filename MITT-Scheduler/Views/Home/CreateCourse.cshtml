@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "CreateCourse";
 }
+<link href="~/Css/Site.css" rel="stylesheet" />
 <div class="main-panel">
     <div class="panel panel-success">
         <div class="panel-heading" style="text-align:center">
@@ -17,20 +18,20 @@
 
                 <div class="form-group">
                     @Html.LabelFor(m => m.InstructorId, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.InstructorId)
+                    @Html.DropDownListFor(m => m.InstructorId, new SelectList(Model.Instructors, "Value", "Text"), new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.ProgramId, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.ProgramId)
+                    @Html.DropDownListFor(m => m.ProgramId, new SelectList(Model.Programs, "Value", "Text"), new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.CourseId, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.CourseId)
+                    @Html.DropDownListFor(m => m.CourseId, new SelectList(Model.Courses, "Value", "Text"), new { @class = "form-control" })
                 </div>
-                @*<div class="form-group">
+                <div class="form-group">
                     @Html.LabelFor(m => m.RoomId, new { @class = "control-label col-md-2" })
-                    @Html.DropDownListFor(x => Model.RoomId, new SelectList(Model.Rooms, "Value", "Text"))
-                </div>*@
+                    @Html.DropDownListFor(x => Model.RoomId, new SelectList(Model.Rooms, "Value", "Text"), new { @class = "form-control" })
+                </div>
                 <div class="form-group">
                     <label for="date-picker-input" class="control-label col-md-2">Start Date</label>
                     <div class='input-group date' id='startdatepicker'>
