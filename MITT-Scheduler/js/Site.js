@@ -2,22 +2,24 @@
 
 $(function () {
     $('#startdatepicker').datetimepicker({
-        format: 'DD/MM/YYYY'
+        date: new Date(),
+        format: 'DD/MM/YYYY',
     });
 });
 
 $(function () {
     $('#enddatepicker').datetimepicker({
-        format: 'DD/MM/YYYY'
+        date: new Date(),
+        format: 'DD/MM/YYYY',
     });
 });
 $(function () {
     $('#starttimepicker').datetimepicker({
-        format: 'LT'
+        format: 'LT',
     });
 });
 $(function () {
     $('#endtimepicker').datetimepicker({
-        format: 'LT'
+        format: 'LT',
     });
 });
