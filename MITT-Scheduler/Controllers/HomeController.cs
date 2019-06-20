@@ -52,7 +52,18 @@ namespace MITT_Scheduler.Controllers
             return View();
         }
 
-        public ActionResult AllCourses()
+        public ActionResult AllCourses(CreateCourseBindingModel model)
+        {
+            model.Programs = Programs.Select(p => new SelectListItem
+            {
+                Value = p.ProgramId.ToString(),
+                Text = p.ProgramName
+            }).ToList();
+
+            return View(model);
+        }
+
+        public ActionResult RoomReport()
         {
             return View();
         }
