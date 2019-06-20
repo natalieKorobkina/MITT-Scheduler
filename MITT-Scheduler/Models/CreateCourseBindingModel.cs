@@ -8,7 +8,9 @@ using System.Web.Mvc;
 namespace MITT_Scheduler.Models
 {
     public class CreateCourseBindingModel
-    {
+    { 
+        public string CourseName { get; set; }
+
         [Display(Name = "Instructor Name")]
         public int InstructorId { get; set; }
         public IEnumerable<SelectListItem> Instructors { get; set; }

@@ -17,6 +17,11 @@
                 @Html.ValidationSummary("", new { @class = "text-danger" })
 
                 <div class="form-group">
+                    @Html.LabelFor(m => m.CourseName, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.CourseName, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
                     @Html.LabelFor(m => m.InstructorId, new { @class = "control-label col-md-2" })
                     @Html.DropDownListFor(m => m.InstructorId, new SelectList(Model.Instructors, "Value", "Text"), new { @class = "form-control" })
                 </div>
@@ -24,10 +29,7 @@
                     @Html.LabelFor(m => m.ProgramId, new { @class = "control-label col-md-2" })
                     @Html.DropDownListFor(m => m.ProgramId, new SelectList(Model.Programs, "Value", "Text"), new { @class = "form-control" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CourseId, new { @class = "control-label col-md-2" })
-                    @Html.DropDownListFor(m => m.CourseId, new SelectList(Model.Courses, "Value", "Text"), new { @class = "form-control" })
-                </div>
+                
                 <div class="form-group">
                     @Html.LabelFor(m => m.RoomId, new { @class = "control-label col-md-2" })
                     @Html.DropDownListFor(x => Model.RoomId, new SelectList(Model.Rooms, "Value", "Text"), new { @class = "form-control" })
