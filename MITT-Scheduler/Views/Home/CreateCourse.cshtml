@@ -16,17 +16,21 @@
                 @Html.ValidationSummary("", new { @class = "text-danger" })
 
                 <div class="form-group">
-                    @Html.LabelFor(m => m.TutorName, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.TutorName)
+                    @Html.LabelFor(m => m.InstructorId, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.InstructorId)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.ProgramName, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.ProgramName)
+                    @Html.LabelFor(m => m.ProgramId, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.ProgramId)
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.CourseName, new { @class = "control-label col-md-2" })
-                    @Html.TextBoxFor(m => m.CourseName)
+                    @Html.LabelFor(m => m.CourseId, new { @class = "control-label col-md-2" })
+                    @Html.TextBoxFor(m => m.CourseId)
                 </div>
+                @*<div class="form-group">
+                    @Html.LabelFor(m => m.RoomId, new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(x => Model.RoomId, new SelectList(Model.Rooms, "Value", "Text"))
+                </div>*@
                 <div class="form-group">
                     <label for="date-picker-input" class="control-label col-md-2">Start Date</label>
                     <div class='input-group date' id='startdatepicker'>

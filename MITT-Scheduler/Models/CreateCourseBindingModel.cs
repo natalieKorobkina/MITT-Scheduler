@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace MITT_Scheduler.Models
 {
     public class CreateCourseBindingModel
     {
         [Display(Name = "Instructor Name")]
-        public string TutorName { get; set; }
+        public int InstructorId { get; set; }
+        public IEnumerable<SelectListItem> Instructors { get; set; }
 
         [Display(Name = "Program Name")]
-        public string ProgramName { get; set; }
-
+        public int ProgramId { get; set; }
+        public IEnumerable<SelectListItem> Programs { get; set; }
+        
         [Display(Name = "Course Name")]
-        public string CourseName { get; set; }
+        public int CourseId { get; set; }
+        public IEnumerable<SelectListItem> Courses { get; set; }
 
-        public string RoomNumber { get; set; }
+        [Display(Name = "Room Number")]
+        public int RoomId { get; set; }
+        public IEnumerable<SelectListItem> Rooms { get; set; }
 
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }

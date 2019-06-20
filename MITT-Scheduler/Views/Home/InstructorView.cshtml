@@ -1,4 +1,8 @@
-﻿<script>
+﻿@model  CreateCourseBindingModel
+@{
+    ViewBag.Title = "Instructor";
+}
+<script>
     $(document).ready(function () {
         var date = new Date();
         var d = date.getDate();
@@ -640,7 +644,7 @@
     <div class="panel panel-success">
         <div class="panel-heading">
             <h2>
-                Welcome, John
+                @ViewBag.Title @Html.DropDownListFor(x => Model.InstructorId, new SelectList(Model.Instructors, "Value", "Text"))
             </h2>
         </div>
         <br />

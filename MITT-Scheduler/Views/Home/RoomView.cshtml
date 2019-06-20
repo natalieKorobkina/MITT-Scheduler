@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Room 902";
+﻿@model  CreateCourseBindingModel
+@{
+    ViewBag.Title = "Room";
 }
 <br />
 
@@ -241,7 +242,7 @@
                     allDay: false,
                     className: 'info'
                 },
-                            
+
                 {
                     id: 999,
                     title: 'ENTERPRISE SOFTWARE I(Gui)',
@@ -578,8 +579,8 @@
                 },
 
                 //Communication course
-                   
-                       {
+
+                {
                     id: 102,
                     title: 'Communication skill in your workplace(David)',
                     start: new Date(y, m - 1, 29, 13, 45),
@@ -587,7 +588,7 @@
                     allDay: false,
                     className: 'important'
                 },
-                        {
+                {
                     id: 103,
                     title: 'Communication skill in your workplace(David)',
                     start: new Date(y, m - 1, 30, 13, 45),
@@ -595,7 +596,7 @@
                     allDay: false,
                     className: 'important'
                 },
-                         {
+                {
                     id: 104,
                     title: 'Communication skill in your workplace(David)',
                     start: new Date(y, m - 1, 31, 13, 45),
@@ -604,9 +605,9 @@
                     className: 'important'
                 },
 
-            //single day course
+                //single day course
 
-                             {
+                {
                     id: 1020,
                     title: 'Monthly Meeting',
                     start: new Date(y, m - 1, 27, 15, 30),
@@ -615,54 +616,54 @@
                     className: 'important'
                 },
 
-                                               {
+                {
                     id: 10212,
                     title: 'Monthly Meeting',
                     start: new Date(y, m - 2, 29, 15, 30),
-                    end: new Date(y, m-2, 29, 17, 00),
+                    end: new Date(y, m - 2, 29, 17, 00),
                     allDay: false,
                     className: 'important'
                 },
 
 
-                                      {
+                {
                     id: 1020,
                     title: 'Develope your carrier(Micle)',
                     start: new Date(y, m, 10, 15, 30),
-                    end: new Date(y, m , 10, 17, 00),
+                    end: new Date(y, m, 10, 17, 00),
                     allDay: false,
                     className: 'important'
                 },
 
-                                                   {
+                {
                     id: 1021,
                     title: 'Develope your carrier(Micle)',
-                    start: new Date(y, m , 11, 15, 30),
-                    end: new Date(y, m , 11, 17, 00),
-                    allDay: false,
-                    className: 'important'
-                },
-                             
-                             {
-                    id: 109,
-                    title: 'Final Test for SD',
-                    start: new Date(y, m , 13, 15, 00),
-                    end: new Date(y, m , 13, 17, 00),
+                    start: new Date(y, m, 11, 15, 30),
+                    end: new Date(y, m, 11, 17, 00),
                     allDay: false,
                     className: 'important'
                 },
 
-                   {
+                {
+                    id: 109,
+                    title: 'Final Test for SD',
+                    start: new Date(y, m, 13, 15, 00),
+                    end: new Date(y, m, 13, 17, 00),
+                    allDay: false,
+                    className: 'important'
+                },
+
+                {
                     id: 166,
                     title: 'Pizza lunch for SD',
-                    start: new Date(y, m , 13, 14, 00),
-                    end: new Date(y, m , 13, 15, 00),
+                    start: new Date(y, m, 13, 14, 00),
+                    end: new Date(y, m, 13, 15, 00),
                     allDay: false,
                     className: 'success'
                 },
 
 
-                   //Presentationday 
+                //Presentationday
                 {
                     id: 300,
                     title: 'Presentation of scheduler for MITT(Tarek)',
@@ -672,34 +673,34 @@
                     className: 'success'
                 },
 
-                     {
+                {
                     id: 301,
                     title: 'Taking picture for SD',
-                    start: new Date(y, m , 21, 12, 00),
-                    end: new Date(y, m , 21, 13, 00),
+                    start: new Date(y, m, 21, 12, 00),
+                    end: new Date(y, m, 21, 13, 00),
                     allDay: false,
                     className: 'info'
                 },
 
-                      {
+                {
                     id: 302,
                     title: 'Final Class party',
-                    start: new Date(y, m , 21, 13, 30),
-                    end: new Date(y, m , 21, 15, 00),
+                    start: new Date(y, m, 21, 13, 30),
+                    end: new Date(y, m, 21, 15, 00),
                     allDay: false,
                     className: 'important'
                 },
 
-                        {
+                {
                     id: 303,
                     title: 'Introducing new SD FrontEnd class(John)',
-                    start: new Date(y, m , 21, 15, 00),
-                    end: new Date(y, m , 21, 17, 00),
+                    start: new Date(y, m, 21, 15, 00),
+                    end: new Date(y, m, 21, 17, 00),
                     allDay: false,
                     className: 'success'
                 },
-               
-               
+
+
             ],
         });
 
@@ -766,16 +767,14 @@
     <div class="panel panel-success">
         <div class="panel-heading">
             <h2>
-                @ViewBag.Title <select>
-                <option>Select Room</option>
-            </select>
-        </h2>
-    </div>
-    <div class="panel-body">
-        <div id='wrap'>
-            <div id='calendar'></div>
-            <div style='clear:both'></div>
+                @ViewBag.Title @Html.DropDownListFor(x => Model.RoomId, new SelectList(Model.Rooms, "Value", "Text"))
+            </h2>
+        </div>
+        <div class="panel-body">
+            <div id='wrap'>
+                <div id='calendar'></div>
+                <div style='clear:both'></div>
+            </div>
         </div>
     </div>
-</div>
 </div>
