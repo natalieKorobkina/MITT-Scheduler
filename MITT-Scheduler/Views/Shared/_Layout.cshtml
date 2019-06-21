@@ -60,14 +60,39 @@
 
                 <ul id="menu">
                     <li>
-                        <a href="@Url.Action("StudentView", "Home")">
-                            <i class="fa fa-home"></i><span>Program View</span>
+                        <a href="">
+                            <i class="fa fa-home"></i><span>Views</span>
                         </a>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("StudentView", "Home")">
+                                    Program View
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("InstructorView", "Home")">
+                                    Instructor View
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("RoomView", "Home")">
+                                    Room View
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="@Url.Action("CreateProgram", "Home")">
-                            <i class="fa fa-ticket-alt"></i><span>Create Program</span>
+                        <a href="#">
+                            <i class="fa fa-ticket-alt"></i><span>Create</span>
                         </a>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("CreateProgram", "Home")">
+                                    Create Program
+                                </a>
+                            </li>
+                        </ul>
+                        
                     </li>
                     <li>
                         <a href="@Url.Action("CreateCourse", "Home")">
@@ -89,21 +114,19 @@
                             <i class="fa fa-address-book"></i><span> Courses</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="@Url.Action("InstructorView", "Home")">
-                            <i class="fa fa-book"></i><span>Instructor View</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("RoomView", "Home")">
-                            <i class="fa fa-table"></i><span>Room View</span>
-                        </a>
-                    </li>
+                    
 
                     <li>
-                        <a href="@Url.Action("RoomReport", "Home")">
-                            <i class="fa fa-table"></i><span>Room Report</span>
+                        <a href="#">
+                            <i class="fa fa-table"></i><span>Reports</span>
                         </a>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("RoomReport", "Home")">
+                                    Room Report
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li>
